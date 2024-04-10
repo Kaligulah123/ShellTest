@@ -11,7 +11,7 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         
-        <Button Text="Enable"
+        <Button Text="Enabled"
                 VerticalOptions="Center" 
                 HorizontalOptions="Center" 
                 HeightRequest="100"
