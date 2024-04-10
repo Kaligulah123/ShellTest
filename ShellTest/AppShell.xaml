@@ -7,8 +7,8 @@
     xmlns:pages="clr-namespace:ShellTest.MVVM.Pages"
     xmlns:zona="clr-namespace:ShellTest.MVVM.Pages.Zona"
     xmlns:viewModels="clr-namespace:ShellTest.MVVM.ViewModels"
-    Shell.BackgroundColor="Blue">
-    <!--Shell.NavBarIsVisible="{Binding IsEnabledButton}">-->
+    Shell.BackgroundColor="Blue"
+    Shell.NavBarIsVisible="{Binding IsEnabledButton}">
 
     <Shell.ItemTemplate>
         <DataTemplate>
