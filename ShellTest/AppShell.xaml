@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ShellTest.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ShellTest"
+    xmlns:pages="clr-namespace:ShellTest.MVVM.Pages"
+    xmlns:zona="clr-namespace:ShellTest.MVVM.Pages.Zona"
+    xmlns:viewModels="clr-namespace:ShellTest.MVVM.ViewModels"
+    Shell.BackgroundColor="Blue">
+    <!--Shell.NavBarIsVisible="{Binding IsEnabledButton}">-->
+
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid ColumnDefinitions=".2*,.8*" HeightRequest="75" RowSpacing="0">
+
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter TargetName="background" Property="Rectangle.Fill" Value="LightGray"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter TargetName="background" Property="Rectangle.Fill" Value="Blue"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
+
+                <Image HeightRequest="30" Source="dotnet_bot.png" VerticalOptions="Center"/>
+                <Label Grid.Column="1" Margin="20,0,0,0" Text="{Binding Title}" TextColor="Black" FontSize="Large" VerticalOptions="Center"/>
+                <Rectangle x:Name="background" Grid.ColumnSpan="2" Fill="LightGray" Opacity=".1"/>
+
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+    
+        <ShellContent
+             Title="Page1"
+             ContentTemplate="{DataTemplate zona:NewPage1}"
+             Route="NewPage1" />
+
+        <ShellContent
+             Title="Page2"
+             ContentTemplate="{DataTemplate zona:NewPage2}"
+             Route="NewPage2" />
+     
+    <MenuItem Text="TestCommand"
+              Command="{Binding TestCommand}"/>
+
+</Shell>
